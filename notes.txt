@@ -1,2 +1,11 @@
-1- admin panel
+1-integrate admin panel
+create a project
+connect with github
+cr db
+admin blade and layout
+    view source
+    include extend
+    yield
+    title,js,css (anything) yield
+
 
