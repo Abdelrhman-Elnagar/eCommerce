@@ -27,10 +27,13 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    @if (App::getLocale() =='ar')
     <!-- Bootstrap 4 RTL -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
     <!-- Custom style for RTL -->
     <link rel="stylesheet" href="{{ asset('admin/dist/css/custom.css') }}">
+    @endif
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -161,6 +164,16 @@
                     </a>
                 </li>
             </ul>
+            {{-- language selector --}}
+            <ul>
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li>
+                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
         </nav>
         <!-- /.navbar -->
 
@@ -172,7 +185,6 @@
                     style="opacity: .8">
                 <span class="brand-text font-weight-light">Admin Panel</span>
             </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->

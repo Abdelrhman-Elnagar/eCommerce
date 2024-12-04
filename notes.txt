@@ -8,4 +8,11 @@ admin blade and layout
     yield
     title,js,css (anything) yield
 
-
+2-mcamara
+rtl
+en,ar
+mcamara
+    prefix
+    middleware
+    session
+    style selector *
