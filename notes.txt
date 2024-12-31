@@ -20,6 +20,7 @@ mcamara package
 
 3-authentcation:
 laravel ui package
+migration , seed and factory
 middleware
 
 
