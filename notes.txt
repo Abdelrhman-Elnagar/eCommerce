@@ -7,12 +7,22 @@ admin blade and layout
     include extend
     yield
     title,js,css (anything) yield
+    #component
 
 2-mcamara
 rtl
 en,ar
-mcamara
+mcamara package
     prefix
     middleware
     session
     style selector *
+
+3-authentcation:
+laravel ui package
+middleware
+
+
+
+
+

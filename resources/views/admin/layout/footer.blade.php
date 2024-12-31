@@ -16,6 +16,8 @@
     </div>
     <!-- ./wrapper -->
 
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-KE6Qt6F9j9A2vKNn6yB/Z7m2U1M1woH2K7XkuCIOMmVpoLzoOKUc7tyWXAhhb6SY" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
