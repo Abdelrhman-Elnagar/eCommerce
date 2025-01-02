@@ -1,3 +1,6 @@
+@php
+$active='dashboard';
+@endphp
 @extends('admin.layout.app')
 @section('title','Dashboard-Home')
 @section('content_admin')

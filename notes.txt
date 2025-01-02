@@ -23,6 +23,16 @@ laravel ui package
 migration , seed and factory
 middleware
 
+4-Spatie Laravel-Translatable
+category create
+lang
+active class,old,error
+request
+null cualising
+spatie
+error message
+
+
 
 
 
