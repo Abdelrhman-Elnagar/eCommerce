@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view ('admin.category.category');
+        return view('admin.category.category');
     }
 
     /**
@@ -21,8 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view ('admin.category.category_create');
-
+        return view('admin.category.category_create');
     }
 
     /**
@@ -30,7 +29,29 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        
+        // dd($request);
+        $picture = $request->file('picture') ?
+            $request->file('picture')->store('public/admin/uploads/Category')
+            : 'public/admin/uploads/default/default-image.jpeg';
+        try {
+            $validate = $request->validated();
+
+            $category = new Category();
+            $category->name = json_encode(['ar' => $request->name_ar, 'en' => $request->name_en]);
+            $category->description = json_encode(['ar' => $request->description_ar, 'en' => $request->description_en]);
+            $category->picture = $picture;
+            $category->slug = $request->slug;
+            // dd($category);
+            $category->showen = $request->showen ? 1 : 0;
+            $category->offer = $request->offer ? 1 : 0;
+            $category->save();
+
+            toastr()->success(trans('dashb.success_save'), trans('dashb.success'), ['timeout' => 500]);
+
+            return to_route('category.index');
+        } catch (\Exception $e) {
+            return back()->withErrors(['error_catch' => $e->getMessage()]);
+        }
     }
 
     /**

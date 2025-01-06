@@ -30,7 +30,11 @@ active class,old,error
 request
 null cualising
 spatie
-error message
+error message "need to translate this"
+modify errors
+add default if not set the image
+php artisan storage:link  "??"
+
 
 
 

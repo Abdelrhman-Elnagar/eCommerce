@@ -1,6 +1,6 @@
 <?php
 return
-[
+    [
         //dashboard
         'Dashboard' => 'Dashboard',
         'Abdelrahman Elnagar' => 'Abdelrahman Elnagar',
@@ -28,8 +28,13 @@ return
         'name_ar' => 'Name in arabic',
         'name_en' => 'Name in arabic',
         'slug' => 'Slug',
-        'description_ar'=>'Description in arabic',
-        'description_en'=>'Description in english',
+        'description_ar' => 'Description in arabic',
+        'description_en' => 'Description in english',
 
-]
-;
+        //notifications
+        'success_save' => 'Successfully Saved',
+        'success_update' => 'Successfully Updated',
+        'success_delete' => 'Successfully Deleted',
+        'success' => 'Congrats',
+
+    ];
