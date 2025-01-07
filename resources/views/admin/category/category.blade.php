@@ -1,10 +1,11 @@
 @php
-$active='category';
+    $active = 'category';
 @endphp
 @extends('admin.layout.app')
 @section('title', 'Dashboard-Category')
 @section('content_admin')
     <div class="content-wrapper">
+        {{-- @dd($Categories); --}}
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -19,7 +20,8 @@ $active='category';
                         </ol>
                     </div><!-- /.col -->
                     <div class="card-body">
-                        <a href="{{ route('category.create') }}" type="button" class="btn btn-outline-primary mb-3 ">{{ trans('dashb.Create') }}</a>
+                        <a href="{{ route('category.create') }}" type="button"
+                            class="btn btn-outline-primary mb-3 ">{{ trans('dashb.Create') }}</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -32,33 +34,25 @@ $active='category';
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Update software</td>
-                                    <td>picture software</td>
-                                    <td>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="checkbox" id="checkboxPrimary1" checked="">
-                                            <label for="checkboxPrimary1">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="icheck-success d-inline">
-                                            <input type="checkbox" checked="" id="checkboxSuccess1">
-                                            <label for="checkboxSuccess1">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-outline-success btn-sm">{{ trans('dashb.Show') }}</button>
-                                            <button type="button" class="btn btn-outline-info btn-sm">{{ trans('dashb.Edit') }}</button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm">{{ trans('dashb.Delete') }}</button>
-                                        </div>
-                                    </td>
-
-                                </tr>
+                                @foreach ($Categories as $Category)
+                                    <tr>
+                                        <td>{{ $Category->id }}</td>
+                                        <td>{{ $Category->name }}</td>
+                                        <td><img src="{{ Storage::url($Category->picture) }}" alt=""
+                                                class="img-thumbnail" style="width: 70px; height: 70px; object-fit: cover;"></td>
+                                        @include('admin.includes.check')
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button type="button"
+                                                    class="btn btn-outline-success btn-sm">{{ trans('dashb.Show') }}</button>
+                                                <button type="button"
+                                                    class="btn btn-outline-info btn-sm">{{ trans('dashb.Edit') }}</button>
+                                                <button type="button"
+                                                    class="btn btn-outline-danger btn-sm">{{ trans('dashb.Delete') }}</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

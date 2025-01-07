@@ -13,7 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.category');
+        $Categories=Category::all();
+        return view('admin.category.category',compact('Categories'));
     }
 
     /**
@@ -37,8 +38,8 @@ class CategoryController extends Controller
             $validate = $request->validated();
 
             $category = new Category();
-            $category->name = json_encode(['ar' => $request->name_ar, 'en' => $request->name_en]);
-            $category->description = json_encode(['ar' => $request->description_ar, 'en' => $request->description_en]);
+            $category->name =['ar' => $request->name_ar, 'en' => $request->name_en];
+            $category->description =['ar' => $request->description_ar, 'en' => $request->description_en];
             $category->picture = $picture;
             $category->slug = $request->slug;
             // dd($category);
