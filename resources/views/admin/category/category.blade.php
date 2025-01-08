@@ -43,8 +43,8 @@
                                         @include('admin.includes.check')
                                         <td>
                                             <div class="btn-group" role="group">
-                                                <button type="button"
-                                                    class="btn btn-outline-success btn-sm">{{ trans('dashb.Show') }}</button>
+                                                <a href="{{ route('category.show',$Category->id) }}" type="button"
+                                                    class="btn btn-outline-success btn-sm">{{ trans('dashb.Show') }}</a>
                                                 <button type="button"
                                                     class="btn btn-outline-info btn-sm">{{ trans('dashb.Edit') }}</button>
                                                 <button type="button"

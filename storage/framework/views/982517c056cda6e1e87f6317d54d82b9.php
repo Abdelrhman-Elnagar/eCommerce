@@ -43,8 +43,8 @@
                                         <?php echo $__env->make('admin.includes.check', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         <td>
                                             <div class="btn-group" role="group">
-                                                <button type="button"
-                                                    class="btn btn-outline-success btn-sm"><?php echo e(trans('dashb.Show')); ?></button>
+                                                <a href="<?php echo e(route('category.show',$Category->id)); ?>" type="button"
+                                                    class="btn btn-outline-success btn-sm"><?php echo e(trans('dashb.Show')); ?></a>
                                                 <button type="button"
                                                     class="btn btn-outline-info btn-sm"><?php echo e(trans('dashb.Edit')); ?></button>
                                                 <button type="button"

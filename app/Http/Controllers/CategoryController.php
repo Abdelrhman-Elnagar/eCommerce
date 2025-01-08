@@ -58,9 +58,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(Category $Category)
     {
-        //
+
+        return view ('admin.category.category_show',compact('Category'));
     }
 
     /**
