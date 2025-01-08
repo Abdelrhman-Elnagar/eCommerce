@@ -37,7 +37,7 @@
                         <div class="col">
                             <label for="picture"><?php echo e(trans('dashb.Picture')); ?></label>
                             <img src="<?php echo e(Storage::url($Category->picture)); ?>" alt="Category Picture" 
-                                class="img-thumbnail img-fluid" style="max-width:200px;">
+                                class="img-thumbnail img-fluid" style="width: 200px; height: 200px; object-fit: cover;">
                         </div>
                     </div>
 

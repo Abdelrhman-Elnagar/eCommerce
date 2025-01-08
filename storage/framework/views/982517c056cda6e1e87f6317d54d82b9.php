@@ -47,8 +47,7 @@
                                                     class="btn btn-outline-success btn-sm"><?php echo e(trans('dashb.Show')); ?></a>
                                                 <button type="button"
                                                     class="btn btn-outline-info btn-sm"><?php echo e(trans('dashb.Edit')); ?></button>
-                                                <button type="button"
-                                                    class="btn btn-outline-danger btn-sm"><?php echo e(trans('dashb.Delete')); ?></button>
+                                                <?php echo $__env->make('admin.includes.modal_delete',['type'=>'outline-danger btn-sm','route'=>'category.destroy','Category'=>$Category], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                             </div>
                                         </td>
                                     </tr>

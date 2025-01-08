@@ -179,31 +179,29 @@
 
             
             <div class="dropdown">
-                <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown"
-                    aria_haspopup="true" aria_expanded="false">
+                <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown" 
+                    aria-haspopup="true" aria-expanded="false">
                     <?php if(App::getLocale() == 'ar'): ?>
                         <?php echo e(LaravelLocalization::getCurrentLocaleName()); ?>
 
-                        <img src="<?php echo e(asset('admin/dist/img/flags/ar.jpg')); ?>" alt="en"
-                            style="max-width: 20px">
+                        <img src="<?php echo e(asset('admin/dist/img/flags/ar.jpg')); ?>" alt="Arabic Flag" class="ml-2" style="width: 20px;">
                     <?php else: ?>
                         <?php echo e(LaravelLocalization::getCurrentLocaleName()); ?>
 
-                        <img src="<?php echo e(asset('admin/dist/img/flags/en.jpg')); ?>" alt="ar"
-                            style="max-width: 20px">
+                        <img src="<?php echo e(asset('admin/dist/img/flags/en.jpg')); ?>" alt="English Flag" class="ml-2" style="width: 20px;">
                     <?php endif; ?>
                 </button>
                 <div class="dropdown-menu">
                     <?php $__currentLoopData = LaravelLocalization::getSupportedLocales(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $localeCode => $properties): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <a class="dropdown_item" rel="alternate" hreflang="<?php echo e($localeCode); ?>"
+                        <a class="dropdown-item" rel="alternate" hreflang="<?php echo e($localeCode); ?>" 
                             href="<?php echo e(LaravelLocalization::getLocalizedURL($localeCode, null, [], true)); ?>">
                             <?php echo e($properties['native']); ?>
 
                         </a>
-                        <br>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
+            
             
         </nav>
         <!-- /.navbar -->

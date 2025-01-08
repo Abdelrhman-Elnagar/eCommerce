@@ -179,28 +179,26 @@
 
             {{-- language selector --}}
             <div class="dropdown">
-                <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown"
-                    aria_haspopup="true" aria_expanded="false">
+                <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown" 
+                    aria-haspopup="true" aria-expanded="false">
                     @if (App::getLocale() == 'ar')
                         {{ LaravelLocalization::getCurrentLocaleName() }}
-                        <img src="{{ asset('admin/dist/img/flags/ar.jpg') }}" alt="en"
-                            style="max-width: 20px">
+                        <img src="{{ asset('admin/dist/img/flags/ar.jpg') }}" alt="Arabic Flag" class="ml-2" style="width: 20px;">
                     @else
                         {{ LaravelLocalization::getCurrentLocaleName() }}
-                        <img src="{{ asset('admin/dist/img/flags/en.jpg') }}" alt="ar"
-                            style="max-width: 20px">
+                        <img src="{{ asset('admin/dist/img/flags/en.jpg') }}" alt="English Flag" class="ml-2" style="width: 20px;">
                     @endif
                 </button>
                 <div class="dropdown-menu">
                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <a class="dropdown_item" rel="alternate" hreflang="{{ $localeCode }}"
+                        <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" 
                             href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                             {{ $properties['native'] }}
                         </a>
-                        <br>
                     @endforeach
                 </div>
             </div>
+            
             {{-- /language selector --}}
         </nav>
         <!-- /.navbar -->

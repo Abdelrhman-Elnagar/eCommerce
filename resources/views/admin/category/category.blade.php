@@ -47,8 +47,7 @@
                                                     class="btn btn-outline-success btn-sm">{{ trans('dashb.Show') }}</a>
                                                 <button type="button"
                                                     class="btn btn-outline-info btn-sm">{{ trans('dashb.Edit') }}</button>
-                                                <button type="button"
-                                                    class="btn btn-outline-danger btn-sm">{{ trans('dashb.Delete') }}</button>
+                                                @include('admin.includes.modal_delete',['type'=>'outline-danger btn-sm','route'=>'category.destroy','Category'=>$Category])
                                             </div>
                                         </td>
                                     </tr>

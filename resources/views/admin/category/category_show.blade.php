@@ -37,7 +37,7 @@
                         <div class="col">
                             <label for="picture">{{ trans('dashb.Picture') }}</label>
                             <img src="{{ Storage::url($Category->picture) }}" alt="Category Picture" 
-                                class="img-thumbnail img-fluid" style="max-width:200px;">
+                                class="img-thumbnail img-fluid" style="width: 200px; height: 200px; object-fit: cover;">
                         </div>
                     </div>
 

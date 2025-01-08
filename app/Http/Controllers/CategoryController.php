@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 
@@ -83,8 +84,11 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(Category $Category)
     {
-        //
+
+        Storage::delete($Category->picture);
+        $Category->delete;
+        return to_route('category.index')->with('success',trans("dashb.success_delete"));
     }
 }

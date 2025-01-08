@@ -43,8 +43,10 @@ update
 delete
 delete image from storage
 modal
+data travel with modal
 include
 spatie
+transfer from ..... to ..........
 
 
 
